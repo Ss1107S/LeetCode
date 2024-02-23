@@ -2,20 +2,22 @@ package Easy;
 
 public class Problem_125_Valid_Palindrome {
     //Language Java
-    //Runtime 153ms
-    //Memory 45.5MB
+    //Runtime 14ms
+    //Memory 44.9MB
     public boolean isPalindrome(String s) {
-        if (s.isEmpty()){
-            return true;
-        }
-        s = s.replaceAll("[^A-Za-z0-9]", "");
-        var i = 0;
-        var result = "";
+        s = s.toLowerCase().replaceAll("[^a-zA-Z0-9]", "");
 
-        while(i < s.length()){
-            result = s.charAt(i)+result;
-            i += 1;
+        if (s.isEmpty()) return true;
+
+        int stringLength = s.length();
+        int left = 0;
+        int right = stringLength - 1;
+
+        while (left <= right) {
+            if (s.charAt(left) != s.charAt(right)) return false;
+            left++;
+            right--;
         }
-        return s.equalsIgnoreCase(result);
+        return true;
     }
 }
