@@ -18,4 +18,3 @@ public class Problem_1816_Truncate_Sentence {
         return s.substring (0, index);
     }
 }
-}
