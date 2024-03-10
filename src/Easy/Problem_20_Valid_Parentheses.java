@@ -1,14 +1,39 @@
 package Easy;
 
+import java.util.Stack;
+
 public class Problem_20_Valid_Parentheses {
     //Language Java
-    //Runtime 41ms
-    //Memory 45.4MB
+    //Runtime 1ms
+    //Memory 41.36MB
     public boolean isValid(String s) {
-        while (s.contains("{}") || s.contains("()") || s.contains("[]")) {
-            s = s.replace("{}", "").replace("()", "").replace("[]", "");
-        }
+        Stack<Character> isValid = new Stack<>();
 
-        return s.isEmpty();
+        for (int i = 0; i < s.length(); i++) {
+            char symbol = s.charAt(i);
+
+            if (symbol == '(' || symbol == '[' || symbol == '{') {
+                isValid.push(symbol);
+            } else if (symbol == ')') {
+                if (!isValid.isEmpty() && isValid.peek() == '(') {
+                    isValid.pop();
+                } else {
+                    return false;
+                }
+            } else if (symbol == '}') {
+                if (!isValid.isEmpty() && isValid.peek() == '{') {
+                    isValid.pop();
+                } else {
+                    return false;
+                }
+            } else if (symbol == ']') {
+                if (!isValid.isEmpty() && isValid.peek() == '[') {
+                    isValid.pop();
+                } else {
+                    return false;
+                }
+            }
+        }
+        return isValid.isEmpty();
     }
 }
