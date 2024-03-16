@@ -5,12 +5,12 @@ import java.util.Arrays;
 public class Problem_217_Return_Length_of_Arguments_Passed {
     //Language JavaScript
     //Runtime 18ms
-    //Memory 55MB
+    //Memory 60,4MB
     public boolean containsDuplicate(int[] nums) {
-        Arrays.sort(nums);
+        HashSet<Integer> twiceValue = new HashSet<>();
 
-        for (int i = 0; i < nums.length - 1; i++){
-            if(nums[i] == nums[i + 1]){
+        for (int num : nums) {
+            if (!twiceValue.add(num)) {
                 return true;
             }
         }
