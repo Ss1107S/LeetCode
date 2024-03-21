@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Problem_728_Self_Dividing_Numbers {
     //Language Java
-    //Runtime 2ms
-    //Memory 40.4MB
+    //Runtime 1ms
+    //Memory 41.7MB
     public List<Integer> selfDividingNumbers(int left, int right) {
         List<Integer> list = new ArrayList<>();
         for(int i = left; i <= right; i++){
