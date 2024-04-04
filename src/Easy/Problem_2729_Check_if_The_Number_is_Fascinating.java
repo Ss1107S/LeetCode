@@ -13,7 +13,7 @@ public class Problem_2729_Check_if_The_Number_is_Fascinating {
 
         if(answer.contains("0")) return false;
         if(answer.length()>9) return false;
-        for(int i=0; i<answer.length(); i++){
+        for(int i = 0; i < answer.length(); i++){
             char digit = answer.charAt(i);
             if(isFascinating.contains(digit)){
                 return false;
@@ -21,7 +21,7 @@ public class Problem_2729_Check_if_The_Number_is_Fascinating {
                 isFascinating.add(digit);
             }
         }
-        if(isFascinating.size()==9){
+        if(isFascinating.size() == 9){
             return true;
         }
         return false;
