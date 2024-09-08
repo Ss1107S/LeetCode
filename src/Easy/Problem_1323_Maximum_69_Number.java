@@ -5,7 +5,7 @@ public class Problem_1323_Maximum_69_Number {
     //Runtime 1ms
     //Memory 40.5MB
     public int maximum69Number (int num) {
-        StringBuilder s = new StringBuilder(""+num);
+        StringBuilder s = new StringBuilder("" + num);
 
         for(int i = 0; i < s.length(); i++){
             if(s.charAt(i) =='6') {
